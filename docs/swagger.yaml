@@ -1,0 +1,72 @@
+definitions:
+  entity.Currency:
+    properties:
+      date:
+        example: "2024-05-22T00:00:00Z"
+        type: string
+      nominal:
+        example: 1
+        type: integer
+      val:
+        example: USD
+        type: string
+      value:
+        example: 90.22
+        type: number
+    type: object
+  http.errorResponse:
+    properties:
+      error:
+        example: message
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: API Service for Test Go Go Ahead
+  title: Test Go Go Ahead
+  version: "1.0"
+paths:
+  /currency:
+    get:
+      consumes:
+      - application/json
+      description: Get currency by params
+      operationId: get-currency-by-params
+      parameters:
+      - example: 22.05.2024
+        in: query
+        name: date
+        type: string
+      - example: USD
+        in: query
+        name: val
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/entity.Currency'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/http.errorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/http.errorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/http.errorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/http.errorResponse'
+      summary: Get currency
+      tags:
+      - currency
+swagger: "2.0"

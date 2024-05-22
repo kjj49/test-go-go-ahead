@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS currency(
+    id SERIAL PRIMARY KEY,
+    val VARCHAR(3) UNIQUE NOT NULL,
+    nominal INT NOT NULL,
+    value NUMERIC(10, 2) NOT NULL,
+    updated_at DATE NOT NULL
+);

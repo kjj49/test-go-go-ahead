@@ -1,0 +1,9 @@
+http:
+  port: '8080'
+
+logger:
+  log_level: 'debug'
+
+postgres:
+  pool_max: 2
+  pg_url: 'postgres://postgres:postgres@localhost:5432/postgres'
