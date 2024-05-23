@@ -40,7 +40,7 @@ func (r *CurrenycRepository) SaveRequest(ctx context.Context, req entity.Currenc
 	return nil
 }
 
-// SaveRequest -.
+// SaveAllCurrency -.
 func (r *CurrenycRepository) SaveAllCurrency(ctx context.Context, allCurrency []entity.Currency) error {
 	for _, c := range allCurrency {
 		query := `
