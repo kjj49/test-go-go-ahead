@@ -21,7 +21,7 @@ func New(r CurrencyRepository, w CurrencyWebAPI) *CurrencyUseCase {
 	}
 }
 
-// GetCurrency - getting currency from sbr api.
+// GetCurrency - getting currency from sbr API.
 func (uc *CurrencyUseCase) GetCurrency(ctx context.Context, c entity.CurrencyRequest) (entity.Currency, error) {
 	currency, err := uc.webAPI.GetCurrency(c)
 	if err != nil {
@@ -36,7 +36,7 @@ func (uc *CurrencyUseCase) GetCurrency(ctx context.Context, c entity.CurrencyReq
 	return currency, nil
 }
 
-// GetAllCurrency - getting all currency from sbr api.
+// GetAllCurrency - getting all currency from sbr API.
 func (uc *CurrencyUseCase) GetAllCurrency(ctx context.Context) error {
 	allCurrency, err := uc.webAPI.GetAllCurrency()
 	if err != nil {
